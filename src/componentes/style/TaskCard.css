@@ -1,0 +1,35 @@
+.ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+.list{
+    background-color: white;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0,0.1);
+}
+.list_completed{
+    background-color: #b84e4e60;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0,0.1);
+}
+
+.btn2{
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #660000;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+}
+.btn2:hover{
+    background-color: #ff2400;
+    color: white;
+}
