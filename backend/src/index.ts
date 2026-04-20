@@ -6,6 +6,9 @@ const {PrismaPg} = require("@prisma/adapter-pg");
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = "llavetesttask";
 
+const port = process.env.PORT || 4000 
+
+
 
 const adapter = new PrismaPg({
     connectionString: process.env.DATABASE_URL,
@@ -192,5 +195,5 @@ app.post("/tasks", (req:any, res:any) => {
 
 
 app.listen(PORT, ()=>{
-    console.log('server running on PORT 3000');
+    console.log('server running on PORT ${port}');
 });
