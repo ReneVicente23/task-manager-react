@@ -21,7 +21,8 @@ function TaskList() {
     const [tasks, setTasks] = useState<Task[]>([]);
 
     const gettasks =() =>{
-        fetch("http://localhost:3000/tasks")
+        //fetch("http://localhost:3000/tasks")
+        fetch(import.meta.env.VITE_API_URL)
         .then((response) => response.json())
         .then((data)=> {
             setTasks(data);
@@ -55,7 +56,8 @@ function TaskList() {
             completed: false,
         };
 
-        fetch("http://localhost:3000/tasks",{
+        
+        fetch(/*"http://localhost:3000/tasks"*/ import.meta.env.VITE_API_URL ,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +76,7 @@ function TaskList() {
     };
 
     const deleteTask = (indexToDelete: number) => {
-        fetch("http://localhost:3000/tasks/"+indexToDelete,{
+        fetch(/*"http://localhost:3000/tasks/"*/import.meta.env.VITE_API_URL+indexToDelete,{
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -103,7 +105,7 @@ function TaskList() {
             id: idaux,
             completed: !completedaux
         };
-        fetch("http://localhost:3000/tasks/"+idaux,{
+        fetch(/*"http://localhost:3000/tasks/"*/import.meta.env.VITE_API_URL+idaux,{
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

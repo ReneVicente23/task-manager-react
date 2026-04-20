@@ -6,7 +6,7 @@ const {PrismaPg} = require("@prisma/adapter-pg");
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = "llavetesttask";
 
-const port = process.env.PORT || 4000 
+//const port = process.env.PORT || 4000 
 
 
 
