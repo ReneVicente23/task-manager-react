@@ -1,4 +1,3 @@
-
 # PROYECTO DE MODULO DIPLOMADO
  
 El siguiente proyecto es un task manager simple, con las funciones: crear tarea, completar tarea, eliminar tarea y editar tarea, este fue puesto en producción en forma de prueba con distintas herramientas (actualmente no se encuentra disponible).
