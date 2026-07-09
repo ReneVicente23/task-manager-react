@@ -4,8 +4,6 @@ El siguiente proyecto es un task manager simple, con las funciones: crear tarea,
  
 <!-- BADGE_CI -->
 
-<!-- END_BADGE_CI -->
- 
 ## 🚀 Instalación local
  
 ```bash
