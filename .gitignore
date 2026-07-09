@@ -6,6 +6,26 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+# Dependencias
+node_modules/
+ 
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+ 
+# Builds
+dist/
+build/
+ 
+# Archivos de IDE y sistema operativo
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
