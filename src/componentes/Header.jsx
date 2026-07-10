@@ -1,5 +1,5 @@
 import './style/Header.css';
-function Header(){
+function Header()
     return(
         <h1 className='header'>TASK MANAGER R.V.</h1>
     )
