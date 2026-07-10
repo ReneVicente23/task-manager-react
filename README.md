@@ -2,7 +2,7 @@
  
 El siguiente proyecto es un task manager simple, con las funciones: crear tarea, completar tarea, eliminar tarea y editar tarea, este fue puesto en producción en forma de prueba con distintas herramientas (actualmente no se encuentra disponible).
  
-<!-- BADGE_CI -->
+[![CI](https://github.com/ReneVicente23/task-manager-react/actions/workflows/ci.yml/badge.svg)](https://github.com/ReneVicente23/task-manager-react/actions/workflows/ci.yml)
 
 ## 🚀 Instalación local
  
