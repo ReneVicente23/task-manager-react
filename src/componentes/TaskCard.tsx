@@ -8,6 +8,9 @@ type TaskCardProps = {
     completed: boolean;
     onToggle: () => void;
 };
+
+//boton pausar añadido
+//TODO: funcionalidad pendiente
 function TaskCard(props:TaskCardProps){
     return(
         <div>
@@ -16,6 +19,10 @@ function TaskCard(props:TaskCardProps){
         </li>
         <button className='btn2' onClick={props.onDelete}>
                 Eliminar
+            </button>
+
+        <button className='btn2'>
+                PAUSAR
             </button>
         </div>
     );
