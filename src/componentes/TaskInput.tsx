@@ -25,7 +25,7 @@ function TaskInput({ onAddTask }: InputTaskProps) {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Escribe una nueva tarea..."
             />
-            <button className='btn' type="submit">Añadir Tarea</button>
+            <button className='btn' type="submit">Añadir2 Tarea</button>
         </form>
     );
 }
