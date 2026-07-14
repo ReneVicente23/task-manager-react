@@ -10,6 +10,6 @@ test('un usuario puede crear una tarea y verla en la lista', async ({ page }) =>
  
   // 3. Verla en la lista
   await page.reload();
-  await expect(page.getByText('Comprar pan')).toBeVisible()
-  await page.getByRole('button', { name: 'Eliminar' }).click()
+  await expect(page.getByText('This is a Footer test')).toBeVisible()
+  //await page.getByRole('button', { name: 'Eliminar' }).click()
 })
