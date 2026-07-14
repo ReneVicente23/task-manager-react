@@ -21,6 +21,8 @@ const PORT = 3000;
 
 app.use(express.json()); 
 app.use(cors());
+
+module.exports = app;
 /*
 let tasks = [
     {id: 1, text: "Study Express", completed: false},
@@ -90,6 +92,10 @@ app.get("/tasks", async (req:any, res:any)=>{
 });
 
 app.post("/tasks", async (req: any, res: any) => {
+    if (!req.body.text || !req.body.text.trim()) {
+        return res.status(400).json({ error: 'El titulo es obligatorio' })
+    }
+
     try{
         const newTask = await prisma.task.create({
             data:{
@@ -97,7 +103,8 @@ app.post("/tasks", async (req: any, res: any) => {
                 completed:false,
             },
         });
-        res.json(newTask);
+        
+        res.status(201).json(newTask);
     }catch(error){
         console.error("Error en POST / tasks:",error);
         res.status(500).json({message:"ERROR AL CREAR TAREAS"})

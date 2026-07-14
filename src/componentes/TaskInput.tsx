@@ -19,6 +19,7 @@ function TaskInput({ onAddTask }: InputTaskProps) {
     return (
         <form onSubmit={handleSubmit}>
             <input className='input'
+                aria-label='Escribe una nueva tarea...'
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
