@@ -21,8 +21,8 @@ function TaskList() {
     const [tasks, setTasks] = useState<Task[]>([]);
 
     const gettasks =() =>{
-        //fetch("http://localhost:3000/tasks")
-        fetch(import.meta.env.VITE_API_URL + "/tasks")
+        fetch("http://localhost:3000/tasks")
+        //fetch(import.meta.env.VITE_API_URL + "/tasks")
         .then((response) => response.json())
         .then((data)=> {
             setTasks(data);
@@ -57,7 +57,7 @@ function TaskList() {
         };
 
         
-        fetch(/*"http://localhost:3000/tasks"*/ import.meta.env.VITE_API_URL + "/tasks" ,{
+        fetch("http://localhost:3000/tasks"/* import.meta.env.VITE_API_URL*/ + "/tasks" ,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -76,7 +76,7 @@ function TaskList() {
     };
 
     const deleteTask = (indexToDelete: number) => {
-        fetch(/*"http://localhost:3000/tasks/"*/import.meta.env.VITE_API_URL + "/tasks/" +indexToDelete,{
+        fetch("http://localhost:3000/tasks/"/*import.meta.env.VITE_API_URL + */+"/tasks/" +indexToDelete,{
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function TaskList() {
             id: idaux,
             completed: !completedaux
         };
-        fetch(/*"http://localhost:3000/tasks/"*/import.meta.env.VITE_API_URL + "/tasks/"+idaux,{
+        fetch("http://localhost:3000/tasks/"/*import.meta.env.VITE_API_URL + "/tasks/"*/+idaux,{
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
