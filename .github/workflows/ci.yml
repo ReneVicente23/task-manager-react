@@ -23,6 +23,9 @@ jobs:
   pruebas:
     name: Pruebas unitarias y cobertura
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -44,3 +47,50 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npx playwright test
+
+  migraciones:
+      name: Migraciones y Seeds
+      runs-on: ubuntu-latest
+      services:
+        postgres:
+          image: postgres:16-alpine
+          env:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: root
+            POSTGRES_DB: taskmanager
+          ports:
+            - 5432:5432
+          options: >-
+            --health-cmd pg_isready
+            --health-interval 5s
+            --health-timeout 5s
+            --health-retries 5
+      defaults:
+        run:
+          working-directory: ./backend
+      env:
+        DATABASE_URL: postgresql://postgres:root@postgres:5432/taskmanager
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
+          with:
+            node-version: '20'
+            cache: 'npm'
+        - run: npm ci
+        
+  deploy-staging:
+    name: Deploy a Staging
+    needs: [build, pruebas, e2e, migraciones]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar Railway CLI
+        run: npm install -g @railway/cli
+      - name: Desplegar a Railway (staging)
+        run: railway up --service backend --environment staging
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+
+

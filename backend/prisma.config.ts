@@ -2,10 +2,12 @@
 // npm install --save-dev prisma dotenv
 import "dotenv/config";
 const { defineConfig, env } = require("prisma/config");
+const apiKey = process.env.API_KEY
 
 module.exports = defineConfig({
   schema: "prisma/schema.prisma",
   migrations: {
+    seed: "prisma/seed.ts",
     path: "prisma/migrations",
   },
   datasource: {
