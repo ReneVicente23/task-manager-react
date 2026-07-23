@@ -11,7 +11,7 @@ const SECRET_KEY = "llavetesttask";
 
 
 const adapter = new PrismaPg({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URLL,
 })
 
 const prisma = new PrismaClient({adapter});
