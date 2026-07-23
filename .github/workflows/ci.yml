@@ -109,9 +109,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Instalar Railway CLI
         run: npm install -g @railway/cli
-
-      - name: services railway
-        run: railway status
       - name: Desplegar a Railway (staging)
         run: railway up --service backend --environment staging
         env:
