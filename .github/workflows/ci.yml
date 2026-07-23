@@ -91,7 +91,7 @@ jobs:
       - name: Desplegar a Railway (staging)
         run: railway up --service backend --environment production
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_STAGING }}
 
 
 
